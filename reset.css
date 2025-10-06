@@ -1,0 +1,82 @@
+/* Universal selector: applies styling properties to all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    /* Set the root font size as a fallback if browsers do not support rem units */
+    font-size: 16px;
+    /* Set the root font size */
+    font-size: 1rem;
+    /* Enable smoth scrolling for the whole page */
+    scroll-behavior: smooth;
+    /* Prevents iOS font scaling */
+    -webkit-text-size-adjustment: 100%;
+    text-rendering: optimizeSpeed;
+}
+
+html, body {
+    /* Remove the default margin */
+    margin: 0;
+    /* Remove the default padding */
+    padding: 0;
+    /* Improved readability */
+    line-height: 1.5;
+}
+
+main {
+    /* Ensure main is treated as a block element (for older browsers) */
+    display: block;
+}
+
+/* Set images and media to be responsive */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Inherit color for links */
+a {
+    color: inherit;
+}
+
+/* Set buttons to have consistent styling */
+button {
+    border: none;
+    background: none;
+}
+
+/* Set a consistent cursor for interactive elements */
+[role="button"], button, a {
+    cursor: pointer;
+}
+
+/* Handle table nicely */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
+/* Allows form controls and scrollbars to adapt automatically to dark mode */
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
